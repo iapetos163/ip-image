@@ -1,11 +1,5 @@
 FROM node:19-alpine as base
-#confirmed
-RUN apk add cairo-dev pango-dev jpeg-dev giflib-dev freetype-dev
-#maybe
-RUN apk add freetype
-#maybe
-RUN apk add --update --repository http://dl-3.alpinelinux.org/alpine/edge/testing libmount ttf-dejavu
-# ttf-liberation fontconfig
+RUN apk add cairo-dev pango-dev jpeg-dev giflib-dev ttf-dejavu
 RUN npm install -g pnpm
 
 ADD package.json pnpm-lock.yaml /app/
